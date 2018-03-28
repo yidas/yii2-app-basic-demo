@@ -125,4 +125,22 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    /**
+     * Migrate by Web
+     *
+     * @return void
+     */
+    public function actionMigrate()
+    {
+        // Keep current application
+        $oldApp = \Yii::$app;
+        // Load Console Application config
+        $config = require \Yii::getAlias('@app'). '/config/console.php';
+        new \yii\console\Application($config);
+        $result = \Yii::$app->runAction('migrate', ['migrationPath' => '@app/migrations/', 'interactive' => false]);
+        // Revert application
+        \Yii::$app = $oldApp;
+        return;
+    }
 }
