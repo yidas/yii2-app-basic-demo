@@ -4,6 +4,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Records;
 
 class DbCrudController extends \yii\web\Controller
 {
@@ -14,17 +15,15 @@ class DbCrudController extends \yii\web\Controller
      */
     public function actionIndex()
     {
-        $model = '\app\models\Table';
-        
         // Check Table by none error method
-        $tableSchema = Yii::$app->db->schema->getTableSchema($model::tableName());
+        $tableSchema = Yii::$app->db->schema->getTableSchema(Records::tableName());
         
         if (!$tableSchema) {
             
             $this->_migrate();
         }
         
-        $records = $model::find()
+        $records = Records::find()
             ->asArray()
             ->all();
         
@@ -40,11 +39,43 @@ class DbCrudController extends \yii\web\Controller
      */
     public function actionCreate()
     {
-        $record = new \app\models\Table;
+        $record = new Records;
 
         $result = $record->save();
 
         $this->redirect(['db-crud/']);
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
+    public function actionAjaxUpdate($id)
+    {
+        // Get PUT body
+        $request = Yii::$app->request;
+
+        $title = $request->getBodyParam('title');
+        
+        try {
+
+            $model = Records::findOne($id);
+            $model->title = $title;
+            $result = $model->save();
+
+            if (!$result) {
+                throw new Exception("Error on updating", 500);
+            }
+
+        } catch (\Exception $e) {
+            
+            throw $e;
+        }
+
+        // JSON response
+        Yii::$app->response->format = yii\web\Response::FORMAT_JSON;
+        return ['title' => $title];
     }
 
     /**
@@ -56,7 +87,7 @@ class DbCrudController extends \yii\web\Controller
     {
         $id = Yii::$app->request->get('id');
         
-        $record = \app\models\Table::findOne($id);
+        $record = Records::findOne($id);
 
         $result = ($record) ? $record->delete() : null;
 

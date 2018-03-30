@@ -5,7 +5,7 @@
 use yii\helpers\Html;
 use yii\helpers\Url;
 // app\assets\AppAsset::register($this);   
-// app\assets\AutoAssetBundle::register($this);  
+app\assets\AutoAssetBundle::register($this);  
 
 $this->title = 'DB CRUD';
 $this->params['breadcrumbs'][] = $this->title;
@@ -31,9 +31,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php foreach ($records as $key => $record):?>
       <tr>
         <th scope="row" class="text-left"><?=$record['id']?></th>
-        <td scope="row"><?=$record['title']?></td>
+        <td scope="row" class="field-title"><?=$record['title']?></td>
         <td>
-          <button type="button" class="btn btn-primary btn-update">Update</button>
+          <button type="button" class="btn btn-primary btn-update" data-url="<?=Url::to(['ajax-update', 'id'=>$record['id']])?>">Update</button>
           <a href="<?=Url::toRoute(['db-crud/delete', 'id'=>$record['id'] ])?>" class="btn btn-danger">Delete</a>
         </td>
       </tr>
