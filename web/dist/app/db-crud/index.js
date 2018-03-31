@@ -20,7 +20,6 @@ $('.btn-update').click(function () {
     data: {'title': input}
   }).done(function (data) {
       var title = data.title;
-      console.log($this.parent())
-      $this.parent().sblings('.field-title').text(title);
+      $this.parent().siblings('.field-title').text(title);
   });
 });

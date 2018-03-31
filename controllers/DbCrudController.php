@@ -61,9 +61,13 @@ class DbCrudController extends \yii\web\Controller
         try {
 
             $model = Records::findOne($id);
+            // Check record
+            if (!$model) {
+                throw new Exception("Record not found", 404);
+            }
             $model->title = $title;
             $result = $model->save();
-
+            // Check save
             if (!$result) {
                 throw new Exception("Error on updating", 500);
             }
@@ -75,7 +79,10 @@ class DbCrudController extends \yii\web\Controller
 
         // JSON response
         Yii::$app->response->format = yii\web\Response::FORMAT_JSON;
-        return ['title' => $title];
+        return [
+            'id' => $id,
+            'title' => $title,
+        ];
     }
 
     /**

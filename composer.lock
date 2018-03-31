@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "11dc19ae1bd8fd0737fec254fc20f7de",
+    "content-hash": "0216b832b74794004b86b13cbee2f9cd",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -267,6 +267,49 @@
                 "mailer"
             ],
             "time": "2018-01-23T07:37:21+00:00"
+        },
+        {
+            "name": "yidas/yii2-auto-asset-bundle",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yidas/yii2-auto-asset-bundle.git",
+                "reference": "ea28839cd05cf77a7e6d4cb54fc562cd6bf934f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yidas/yii2-auto-asset-bundle/zipball/ea28839cd05cf77a7e6d4cb54fc562cd6bf934f5",
+                "reference": "ea28839cd05cf77a7e6d4cb54fc562cd6bf934f5",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yidas\\web\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nick Tsai",
+                    "email": "myintaer@gmail.com"
+                }
+            ],
+            "description": "Base Asset Bundle for Yii2 to auto-allocate JS & CSS files for each View",
+            "keywords": [
+                "asset",
+                "asset-bundle",
+                "framework",
+                "view",
+                "yii2"
+            ],
+            "time": "2018-03-31T09:26:06+00:00"
         },
         {
             "name": "yiisoft/yii2",
