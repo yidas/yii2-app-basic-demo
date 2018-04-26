@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "11dc19ae1bd8fd0737fec254fc20f7de",
+    "content-hash": "a2654e8650c4f9def97c9b3daf372007",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -267,6 +267,49 @@
                 "mailer"
             ],
             "time": "2018-01-23T07:37:21+00:00"
+        },
+        {
+            "name": "yidas/yii2-auto-asset-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yidas/yii2-auto-asset-bundle.git",
+                "reference": "6d0b5749b36cf22e3f1ebfb2019ae84fec1dae40"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yidas/yii2-auto-asset-bundle/zipball/6d0b5749b36cf22e3f1ebfb2019ae84fec1dae40",
+                "reference": "6d0b5749b36cf22e3f1ebfb2019ae84fec1dae40",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "~2.0.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "yidas\\web\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nick Tsai",
+                    "email": "myintaer@gmail.com"
+                }
+            ],
+            "description": "Base Asset Bundle for Yii2 to auto-allocate JS & CSS files for each View",
+            "keywords": [
+                "asset",
+                "asset-bundle",
+                "framework",
+                "view",
+                "yii2"
+            ],
+            "time": "2018-03-28 11:19:01"
         },
         {
             "name": "yiisoft/yii2",
@@ -3037,7 +3080,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "yidas/yii2-auto-asset-bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
