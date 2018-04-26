@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2654e8650c4f9def97c9b3daf372007",
+    "content-hash": "0216b832b74794004b86b13cbee2f9cd",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -270,16 +270,16 @@
         },
         {
             "name": "yidas/yii2-auto-asset-bundle",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yidas/yii2-auto-asset-bundle.git",
-                "reference": "6d0b5749b36cf22e3f1ebfb2019ae84fec1dae40"
+                "reference": "ea28839cd05cf77a7e6d4cb54fc562cd6bf934f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yidas/yii2-auto-asset-bundle/zipball/6d0b5749b36cf22e3f1ebfb2019ae84fec1dae40",
-                "reference": "6d0b5749b36cf22e3f1ebfb2019ae84fec1dae40",
+                "url": "https://api.github.com/repos/yidas/yii2-auto-asset-bundle/zipball/ea28839cd05cf77a7e6d4cb54fc562cd6bf934f5",
+                "reference": "ea28839cd05cf77a7e6d4cb54fc562cd6bf934f5",
                 "shasum": ""
             },
             "require": {
@@ -309,7 +309,7 @@
                 "view",
                 "yii2"
             ],
-            "time": "2018-03-28 11:19:01"
+            "time": "2018-03-31T09:26:06+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -3080,9 +3080,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "yidas/yii2-auto-asset-bundle": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
