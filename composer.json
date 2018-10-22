@@ -1,6 +1,6 @@
 {
-    "name": "yiisoft/yii2-app-basic",
-    "description": "Yii 2 Basic Project Template",
+    "name": "yidas/yii2-app-basic-demo",
+    "description": "Yii2 Framework demonstrated environment with CRUD",
     "keywords": ["yii2", "framework", "basic", "project template"],
     "homepage": "http://www.yiiframework.com/",
     "type": "project",
