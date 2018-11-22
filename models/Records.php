@@ -30,4 +30,12 @@ class Records extends ActiveRecord
             ],
         ];
     }
+    
+    public function rules()
+    {
+        return [
+            [['title'], 'required'],
+            [['title'], 'filter', 'filter'=>'htmlspecialchars']
+        ];
+    }
 }
