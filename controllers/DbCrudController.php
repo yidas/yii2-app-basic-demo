@@ -4,6 +4,7 @@
 namespace app\controllers;
 
 use Yii;
+use Exception;
 use app\models\Records;
 
 class DbCrudController extends \yii\web\Controller
