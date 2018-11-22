@@ -5,9 +5,11 @@
 $('.btn-update').click(function () {
   
   var $this = $(this);
+  var $title = $this.parent().siblings('.field-title');
+  var defaultTitle = $title.text() || 'Title';
 
   // Input
-  var input = prompt("Please enter the Title name", "Title");
+  var input = prompt("Please enter the Title name", defaultTitle);
   if (input === null) {
 
       return false;
@@ -20,6 +22,6 @@ $('.btn-update').click(function () {
     data: {'title': input}
   }).done(function (data) {
       var title = data.title;
-      $this.parent().siblings('.field-title').text(title);
+      $title.text(title);
   });
 });
