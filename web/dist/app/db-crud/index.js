@@ -19,9 +19,22 @@ $('.btn-update').click(function () {
   $.ajax({
     type: "PUT",
     url: $this.attr('data-url'),
-    data: {'title': input}
+    data: {'title': input},
+    statusCode: {
+      200: function (res) {
+        var title = res.title;
+        $title.text(title);
+      },
+      400: function (res) {
+        var message = '';
+        $.each(res.responseJSON.errors, function (index, value) {
+          console.log(value)
+          message += value[0];
+        });
+        alert(message);
+      },
+    }
   }).done(function (data) {
-      var title = data.title;
-      $title.text(title);
-  });
+    // Do nothing
+  })
 });
