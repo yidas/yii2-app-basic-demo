@@ -21,8 +21,8 @@ CONFIGURATION
 
 ### Database Setting
 
-1. Create a database named `yii_demo` which could connect to this project application.
+1. Create a database for demo application (Default name is `yii_demo`).
 
-2. Set database connection from `config/db.php` with permission
+2. Set the database permission from `config/db.php`.
 
 After setting, you could actvie migration and tables from web.
