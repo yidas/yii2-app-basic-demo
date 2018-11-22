@@ -54,6 +54,9 @@ class DbCrudController extends \yii\web\Controller
      */
     public function actionAjaxUpdate($id)
     {
+        // JSON response
+        Yii::$app->response->format = yii\web\Response::FORMAT_JSON;
+        
         // Get PUT body
         $request = Yii::$app->request;
 
@@ -67,10 +70,15 @@ class DbCrudController extends \yii\web\Controller
                 throw new Exception("Record not found", 404);
             }
             $model->title = $title;
+
             $result = $model->save();
             // Check save
             if (!$result) {
-                throw new Exception("Error on updating", 500);
+
+                Yii::$app->response->statusCode = 400;
+                return [
+                    'errors' => $model->errors,
+                ];
             }
 
         } catch (\Exception $e) {
@@ -78,8 +86,6 @@ class DbCrudController extends \yii\web\Controller
             throw $e;
         }
 
-        // JSON response
-        Yii::$app->response->format = yii\web\Response::FORMAT_JSON;
         return [
             'id' => $id,
             'title' => $title,
