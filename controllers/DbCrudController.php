@@ -71,14 +71,17 @@ class DbCrudController extends \yii\web\Controller
             }
             $model->title = $title;
 
-            $result = $model->save();
-            // Check save
-            if (!$result) {
-
+            if (!$model->validate()) {
                 Yii::$app->response->statusCode = 400;
                 return [
                     'errors' => $model->errors,
                 ];
+            }
+
+            $result = $model->save(false);
+            // Check save
+            if (!$result) {
+                throw new Exception("Error on update", 500);
             }
 
         } catch (\Exception $e) {
