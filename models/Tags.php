@@ -5,16 +5,16 @@ namespace app\models;
 use yii\db\ActiveRecord;
 use yii\behaviors\TimestampBehavior;
 use yii\db\Expression;
-use app\models\Tags;
+use app\models\Records;
 
-class Records extends ActiveRecord
+class Tags extends ActiveRecord
 { 
     /**
      * @return string the name of the table associated with this ActiveRecord class.
      */
     public static function tableName()
     {
-        return 'records';
+        return 'tags';
     }
 
     /**
@@ -40,8 +40,8 @@ class Records extends ActiveRecord
         ];
     }
 
-    public function getTags()
+    public function getRecord()
     {
-        return $this->hasMany(Tags::className(), ['records_id' => 'id']);
+        return $this->hasOne(Records::className(), ['id' => 'records_id']);
     }
 }
